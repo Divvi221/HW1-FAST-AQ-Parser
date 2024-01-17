@@ -53,7 +53,7 @@ def test_FastaFormat():
         next(iter(FastaParser("tests/blank.fa")))
 
     assert next(iter(FastaParser("data/test.fq")))[0] == None #if it is a fastq file, first line == None
-
+    assert next(iter(FastaParser("data/test.fa")))[0] != None
 
 
 def test_FastqParser():
@@ -73,4 +73,5 @@ def test_FastqFormat():
     Test to make sure fastq file is being read in. If this is a fasta file, the
     first line is None
     """
-    assert next(iter(FastqParser("data/test.fa")))[0] == None #assert that first line is None if 
+    assert next(iter(FastqParser("data/test.fa")))[0] == None #assert that first entry is None if a .fa file is used
+    assert next(iter(FastaParser("data/test.fq")))[0] != None
