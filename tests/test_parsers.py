@@ -74,4 +74,4 @@ def test_FastqFormat():
     first line is None
     """
     assert next(iter(FastqParser("data/test.fa")))[0] == None #assert that first entry is None if a .fa file is used
-    assert next(iter(FastaParser("data/test.fq")))[0] != None
+    assert next(iter(FastqParser("data/test.fq")))[0] != None
