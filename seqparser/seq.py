@@ -10,10 +10,10 @@ def transcribe(seq: str, reverse: bool = False) -> str:
     Write a function that will transcribe (replace DNA sequence to RNA
     by replacing all 'T' to 'U') in an input sequence
     """
-    output = ""
+    output = "" #initialize output string
     for i in seq:
         if i in ALLOWED_NUC:
-            output+=TRANSCRIPTION_MAPPING[i]
+            output+=TRANSCRIPTION_MAPPING[i] #if i is an allowed nucleotide, append its RNA mapping to the output
         else:
             print("These nucleotides are not in the list of allowed nucleotides.")
     return output
@@ -24,14 +24,10 @@ def reverse_transcribe(seq: str) -> str:
     Write a function that will transcribe an input sequence and reverse
     the sequence
     """
-    output = ""
-    #REVERSE_TRANSCRIPTION = {v: k for k, v in TRANSCRIPTION_MAPPING.items()}
-    #for i in seq:
-    #    if i in REVERSE_TRANSCRIPTION.keys():
-    #        output+=REVERSE_TRANSCRIPTION[i]
+    output = "" #initialize output string
     for i in seq:
         if i in ALLOWED_NUC:
-            output+=TRANSCRIPTION_MAPPING[i]
+            output+=TRANSCRIPTION_MAPPING[i] #if i is an allowed nucleotide, append its RNA mapping to the output
         else:
-            print("These nucleotides are not in the list of allowed nucleotides.")
-    return output[::-1]
+            print("These nucleotides are not in the list of allowed nucleotides.") 
+    return output[::-1] #return the reverse of the transcription output
