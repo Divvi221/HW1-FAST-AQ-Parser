@@ -23,8 +23,11 @@ def reverse_transcribe(seq: str) -> str:
     the sequence
     """
     output = ""
-    REVERSE_TRANSCRIPTION = {v: k for k, v in TRANSCRIPTION_MAPPING.items()}
+    #REVERSE_TRANSCRIPTION = {v: k for k, v in TRANSCRIPTION_MAPPING.items()}
+    #for i in seq:
+    #    if i in REVERSE_TRANSCRIPTION.keys():
+    #        output+=REVERSE_TRANSCRIPTION[i]
     for i in seq:
-        if i in REVERSE_TRANSCRIPTION.keys():
-            output+=REVERSE_TRANSCRIPTION[i]
-    return output
+        if i in ALLOWED_NUC:
+            output+=TRANSCRIPTION_MAPPING[i]
+    return output[::-1]
