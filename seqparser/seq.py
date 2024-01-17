@@ -14,6 +14,8 @@ def transcribe(seq: str, reverse: bool = False) -> str:
     for i in seq:
         if i in ALLOWED_NUC:
             output+=TRANSCRIPTION_MAPPING[i]
+        else:
+            print("These nucleotides are not in the list of allowed nucleotides.")
     return output
 
 
@@ -30,4 +32,6 @@ def reverse_transcribe(seq: str) -> str:
     for i in seq:
         if i in ALLOWED_NUC:
             output+=TRANSCRIPTION_MAPPING[i]
+        else:
+            print("These nucleotides are not in the list of allowed nucleotides.")
     return output[::-1]
