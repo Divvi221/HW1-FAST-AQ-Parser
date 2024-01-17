@@ -5,7 +5,6 @@ from seqparser import (
         FastqParser)
 
 import pytest
-import io
 
 
 def test_freebie_parser_1():
@@ -74,4 +73,4 @@ def test_FastqFormat():
     Test to make sure fastq file is being read in. If this is a fasta file, the
     first line is None
     """
-    assert next(iter(FastqParser("test.fa"))) == None
+    assert next(iter(FastqParser("test.fa"))) == None #assert that first line is None if 
